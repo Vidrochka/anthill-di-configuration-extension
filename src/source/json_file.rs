@@ -1,6 +1,5 @@
 use std::marker::PhantomData;
 
-// use anthill_di::{Constructor, DependencyContext, types::BuildDependencyResult};
 use async_trait::async_trait;
 use derive_new::new;
 use serde::Deserialize;
@@ -15,15 +14,6 @@ pub struct JsonFileConfiguration<TConfiguration> where for<'de> TConfiguration: 
     #[new(default)] pd: PhantomData<TConfiguration>,
 }
 
-// impl<TConfiguration> JsonFileConfiguration<TConfiguration> where for<'de> TConfiguration: Deserialize<'de> + Sync + Send + 'static {
-//     pub fn new(path: String) -> Self {
-//         Self {
-//             path,
-//             pd: PhantomData,
-//         }
-//     }
-// }
-
 #[async_trait]
 impl<TConfiguration> ISource<TConfiguration> for JsonFileConfiguration<TConfiguration> where for<'de> TConfiguration: Deserialize<'de> + Sync + Send + 'static {
     async fn get(&mut self) -> LoadConfigurationResult<TConfiguration> {
@@ -36,10 +26,3 @@ impl<TConfiguration> ISource<TConfiguration> for JsonFileConfiguration<TConfigur
         return Ok(configuration)
     }
 }
-
-// #[async_trait]
-// impl<TConfiguration> Constructor for JsonFileConfiguration<TConfiguration> where for<'de> TConfiguration: Deserialize<'de> + Sync + Send + 'static {
-//     async fn ctor(ctx: DependencyContext) ->  BuildDependencyResult<Self> {
-//         return Self {}
-//     }
-// }
