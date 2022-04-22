@@ -1,3 +1,5 @@
+[![build & tests](https://github.com/Vidrochka/anthill-di-configuration-extension/actions/workflows/rust.yml/badge.svg)](https://github.com/Vidrochka/anthill-di-configuration-extension/actions/workflows/rust.yml)
+
 # anthill-di-configuration-extension
 Rust configuration integrated in anthill-di
 
