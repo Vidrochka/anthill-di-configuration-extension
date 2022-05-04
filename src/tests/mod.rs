@@ -1,2 +1,3 @@
-mod snapshot_test;
-mod configuration_test;
+mod load_snapshot;
+mod load_configuration;
+mod store_snapshot;

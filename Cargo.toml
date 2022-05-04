@@ -1,6 +1,6 @@
 [package]
 name = "anthill-di-configuration-extension"
-version = "0.1.0"
+version = "1.2.3"
 authors = ["Vidrochka <Evgenuy1605@yandex.ru>"]
 edition = "2021"
 description = "Rust configuration integrated in anthill-di"
@@ -10,8 +10,8 @@ repository = "https://github.com/Vidrochka/anthill-di-configuration-extension"
 keywords = ["anthill", "configuration", "snapshot", "anthill-di", "extension"]
 
 [dependencies]
-anthill-di = "1.2.0"
-async-trait = "0.1.52"
+anthill-di = "1.2.3"
+async-trait-with-sync = "0.1.36"
 tokio = { version = "1.15.0", features = ["full"] }
 serde = { version = "1.0.133", features = ["derive"] }
 serde_derive = "1.0.133"

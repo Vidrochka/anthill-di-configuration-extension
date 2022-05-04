@@ -48,7 +48,8 @@ fn _() {
 }
 ```
 
-To synchronize data with the source, ConfigurationSnapshot has a sync method
+To synchronize data with the source, ConfigurationSnapshot has a ```sync``` method
+To save data, call ```store```
 
 ``` rust
 fn _() {
@@ -65,8 +66,18 @@ fn _() {
 
     configuration_snapshot.sync().await.unwrap();
 
-    // we have configuration_snapshot.value from changed file
+    // now we have configuration_snapshot.value from changed file
+
+    // change configuration value
+    configuration_snapshot.value.test_value = "new string".to_string();
+
+    // store new value to file
+    configuration_snapshot.store().await.unwrap();
+
+    // now we have changed file
 }
 ```
 
 ### See examples present in src/tests folder
+
+Crate version is equal minimal required version of ```anthill-di```
