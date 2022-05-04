@@ -1,13 +1,13 @@
 [![build & tests](https://github.com/Vidrochka/anthill-di-configuration-extension/actions/workflows/rust.yml/badge.svg)](https://github.com/Vidrochka/anthill-di-configuration-extension/actions/workflows/rust.yml)
 
 # anthill-di-configuration-extension
-Rust configuration integrated in anthill-di
+Rust configuration integrated in [anthill-di](https://crates.io/crates/anthill-di)
 
 ---
 
 ## Warning
 
-Library required Rust nightly for trait as interface (Unsize)
+Library required Rust nightly for [anthill-di](https://crates.io/crates/anthill-di)
 
 ---
 
@@ -80,4 +80,4 @@ fn _() {
 
 ### See examples present in src/tests folder
 
-Crate version is equal minimal required version of ```anthill-di```
+Crate version is equal minimal required version of [anthill-di](https://crates.io/crates/anthill-di)

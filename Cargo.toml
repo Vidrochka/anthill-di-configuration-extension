@@ -1,6 +1,6 @@
 [package]
 name = "anthill-di-configuration-extension"
-version = "1.2.3"
+version = "1.2.4"
 authors = ["Vidrochka <Evgenuy1605@yandex.ru>"]
 edition = "2021"
 description = "Rust configuration integrated in anthill-di"
