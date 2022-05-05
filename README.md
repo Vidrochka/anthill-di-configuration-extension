@@ -20,7 +20,7 @@ At this stage, json loading via serde_json is implemented, but you can extend th
 ``` rust
 fn _() {
     let root_context = DependencyContext::new_root()
-    root_context.register_source(|_| Ok(JsonFileConfiguration::<Test>::new("configuration_test.json".to_string()))).await.unwrap();
+    root_context.register_source(|_| Ok(JsonFileConfiguration::<Test>::new("configuration_test.json".to_string(), false))).await.unwrap();
 }
 ```
 
@@ -80,4 +80,4 @@ fn _() {
 
 ### See examples present in src/tests folder
 
-Crate version is equal minimal required version of [anthill-di](https://crates.io/crates/anthill-di)
+Minimal required version of [anthill-di](https://crates.io/crates/anthill-di) 1.2.3

@@ -1,6 +1,3 @@
-mod register_snapshot;
-pub use register_snapshot::*;
-
 mod register_source;
 pub use register_source::*;
 

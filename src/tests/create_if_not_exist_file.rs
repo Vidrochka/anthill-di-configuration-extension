@@ -8,29 +8,26 @@ struct Test {
 
 impl Default for Test {
     fn default() -> Self {
-        Self { test_text: Default::default() }
+        Self { test_text: "test_value".to_string() }
     }
 }
 
 #[tokio::test]
-async fn load_configuration() {
+async fn create_if_not_exist_file() {
     use anthill_di::{DependencyContext, DependencyLifeCycle};
     use crate::{
         extensions::{RegisterConfigurationExtension, RegisterSourceExtension},
         source::JsonFileConfiguration,
     };
     use std::{fs::File, io::Write};
-    
-    let mut output = File::create("load_configuration.json").unwrap();
-    write!(output, "{{ \"test_text\": \"test_value\" }}").unwrap();
 
 
     let mut root_context = DependencyContext::new_root();
-    root_context.register_source(|_| Ok(JsonFileConfiguration::<Test>::new("load_configuration.json".to_string(), false))).await.unwrap();
+    root_context.register_source(|_| Ok(JsonFileConfiguration::<Test>::new("create_if_not_exist_file.json".to_string(), true))).await.unwrap();
     root_context.register_configuration::<Test, JsonFileConfiguration::<Test>>(DependencyLifeCycle::Transient).await.unwrap();
     
     let configuration = root_context.resolve::<Test>().await.unwrap();
 
-    std::fs::remove_file("load_configuration.json").unwrap();
+    std::fs::remove_file("create_if_not_exist_file.json").unwrap();
     assert_eq!(configuration.test_text, "test_value".to_string());
 }
